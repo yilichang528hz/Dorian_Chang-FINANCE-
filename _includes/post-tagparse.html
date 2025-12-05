@@ -1,0 +1,17 @@
+<!-- Adds buttons to tags in blog posts -->
+    {% if page.tags %}
+
+        <span style="display: inline;">
+        <i class="fa fa-tags"></i>&nbsp;&nbsp;Tags:&nbsp;&nbsp;
+        <span>
+        {% for tag in page.tags %}
+            {% capture tag_name %}{{ tag }}{% endcapture %}
+                <a class="tag_btn" href="/tag/{{ tag_name }}"><span>{{ tag_name }}</span></a>
+            {% endfor %}
+        </span>        
+        <hr>        
+        </span>
+    {% endif %} 
+
+
+

@@ -1,0 +1,22 @@
+---
+layout: search
+sitemap: false
+---
+
+<div class="post">
+<h3>Tag: {{ page.tag }}</h3>
+<ol>
+{% for post in site.tags[page.tag] %}
+  <li style="margin: 0 0 0.3em 0"><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date_to_string }})<br>
+    {{ post.content | strip_html | truncatewords: 30  }}
+  </li>
+{% endfor %}
+</ol>
+
+
+</div>
+<hr>
+
+<div style="margin: 0.5em 0 0.5em 0;"></div>
+
+{% include archive.html %}
